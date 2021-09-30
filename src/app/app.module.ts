@@ -9,6 +9,9 @@ import { BookModule } from './component/book/book.module';
 import { HeaderModule } from './component/header/header.module';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DataService } from './services/data.service';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [AppComponent, HomeComponent],
   imports: [
@@ -19,8 +22,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BookModule,
     NgbModule,
     HeaderModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

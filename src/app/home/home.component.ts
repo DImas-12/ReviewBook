@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 
+import { DataService } from '../services/data.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,12 +11,13 @@ import { finalize } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
   public data: any;
-  constructor() {}
+  constructor(private dataservice: DataService) {}
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.NewCardStatus = false;
     this.ReviewCardStatus = false;
     // this.getDataGroup();
+    await this.fakeadata();
   }
 
   public AddFrom: any = {};
@@ -45,5 +48,10 @@ export class HomeComponent implements OnInit {
   DetailCard(data: any) {
     this.BookData = data.Name;
     this.NewCardStatus = true;
+  }
+
+  async fakeadata() {
+    let fake = await this.dataservice.getAreas();
+    console.log('fake', fake);
   }
 }
