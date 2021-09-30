@@ -1,0 +1,60 @@
+<div class="bg">
+  <div style="width: 100%">
+    <header></header>
+    <dashboard-item-wrapper [title]="'New Book'">
+      <form>
+        <label for="fname">Name</label>
+        <input type="text" name="Name" [(ngModel)]="AddFrom.Name" />
+        <label for="fname">Year</label>
+        <input type="text" name="Year" [(ngModel)]="AddFrom.Year" />
+        <button class="button" (click)="Add()">Add</button>
+      </form>
+    </dashboard-item-wrapper>
+    <dashboard-item-wrapper [title]="'Book List'">
+      <book-wrapper
+        [title]="MovieList"
+        (DetailCard)="DetailCard($event)"
+      ></book-wrapper>
+    </dashboard-item-wrapper>
+    <div *ngIf="NewCardStatus">
+      <dashboard-item-wrapper [title]="'Add Your Review'" [title2]="BookData">
+        <form>
+          <label for="fname">Email</label>
+          <input type="text" name="Email" [(ngModel)]="RiviewFrom.Email" />
+          <label for="fname">Note</label>
+          <input type="text" name="Note" [(ngModel)]="RiviewFrom.Note" />
+          <label>Rating</label>
+          <ngb-rating
+            [max]="5"
+            [(rate)]="RiviewFrom.Star"
+            [readonly]="false"
+          ></ngb-rating>
+          <br />
+          <button class="button" (click)="AddRiview()">Save</button>
+        </form>
+      </dashboard-item-wrapper>
+    </div>
+    <div *ngIf="ReviewCardStatus">
+      <dashboard-item-wrapper [title]="'Riviews'" [title2]="BookData">
+        <div *ngFor="let data of DataReview">
+          <form>
+            <div>
+              <label>{{ data.Email }}</label>
+            </div>
+            <div>
+              <small>{{ data.Note }}</small>
+            </div>
+            <div>
+              <!-- <label> Star{{ data.Star }}</label> -->
+              <ngb-rating
+                [max]="5"
+                [(rate)]="data.Star"
+                [readonly]="false"
+              ></ngb-rating>
+            </div>
+          </form>
+        </div>
+      </dashboard-item-wrapper>
+    </div>
+  </div>
+</div>

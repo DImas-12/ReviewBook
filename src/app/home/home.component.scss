@@ -1,0 +1,15 @@
+.bg {
+  background-color: #f4f5f9;
+  flex: 1;
+  display: flex;
+
+  position: relative;
+  z-index: 2;
+  padding: 30px;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}

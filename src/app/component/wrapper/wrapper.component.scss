@@ -1,0 +1,22 @@
+.chart-content {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(128, 128, 128, 0.05),
+    0 10px 10px rgba(128, 128, 128, 0.05);
+  margin-bottom: 20px;
+  width: 100%;
+  .chart-header {
+    padding: 10px;
+    font-size: 17px !important;
+    padding-left: 20px;
+    p {
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+  }
+
+  .chart-body {
+    padding: 20px;
+    min-height: 50px;
+  }
+}

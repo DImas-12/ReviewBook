@@ -1,0 +1,18 @@
+.chart-content {
+  background-color: #f9548c !important;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(128, 128, 128, 0.05),
+    0 10px 10px rgba(128, 128, 128, 0.05);
+  margin-bottom: 20px;
+  width: 100%;
+  .chart-header {
+    padding: 10px;
+    font-size: 17px !important;
+    padding-left: 20px;
+    text-align: center;
+    p {
+      font-size: 30px;
+      margin-bottom: 0;
+    }
+  }
+}
